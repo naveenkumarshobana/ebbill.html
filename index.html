@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EB Bill Calculator</title>
+    <style>
+        .login{
+            margin-top: 10%;
+            margin-left: 30%;
+        }
+        .amount{
+            margin-top: 1%;
+            margin-left: 35%;
+        }
+        .table{
+            margin-top: 2%;
+            margin-left: 35%;
+        }
+        body{
+            background-color: wheat;
+        }
+    </style>
+    <script>
+        function fun()
+        {
+            var v1=document.getElementById("txt1");
+            var v4=document.getElementById("txt2");
+            var v2=parseInt(v4.value)-parseInt(v1.value);
+            if(v2<=100){
+                var v3=0;
+            }
+            if(v2<0){
+                alert("invalid input");
+                var v3=0;
+            }
+            if(v2<200){
+                var v3=(v2-100)*1.5;
+            }
+            if(v2<=500){
+                var v3=150+((v2-200)*2);
+            }
+            if(v2>500){
+                var v3=150+600+((v2-500)*3.5);
+            }
+            
+            document.getElementById("demo").innerHTML = v3;
+            
+        }
+    </script>
+</head>
+<body>
+ 
+    <form">
+        <div class="login">
+            <fieldset style="width: 50%;background-color: palegoldenrod; border-radius: 30px;" >
+            <h1 style="text-align: center;">Electric Bill Calculation</h1>
+        <center>
+            enter customer name :
+            <input type="text" id="t1" size="30%">
+            <br>
+        <br>
+            enter customer id : 
+            <input type="text" id="t2" size="30%">
+            <br>
+        <br>
+        enter previous month units : <input type="text" id="txt1" size="30%" >unit
+        <br>
+        <br>
+        
+        enter current month units: <input type="text" id="txt2" size="30%">unit
+        <br>
+        <br>
+        <br>
+        <input type="button" value="submit" onclick="fun()">
+    </fieldset>
+    </div>
+    </center>
+
+    </form>
+    <div class="amount">
+    <fieldset style="width: 50%;background-color: lightskyblue;border-radius: 30px;" >
+
+    <p id="t1"></p>
+    <p id="t2"></p>
+    <table style="border-style: solid;"></table>
+    Amount(in Rs):<p id="demo"></p>
+
+</fieldset>
+</div>
+
+<div class="table">
+    
+   
+    <table border="1px solid "  >
+        <tr>
+          <th>Units</th>
+          <th>Amount to be Paid</th>
+        
+        </tr>
+        <tr>
+          <td>0-100</td>
+          <td>Free</td>
+         
+        </tr>
+        <tr>
+          <td>101-300</td>
+          <td>1.5 rs/unit</td>
+          
+        </tr>
+        <tr>
+          <td>300-500</td>
+          <td>2 rs/unit</td>
+          
+        </tr>
+        <tr>
+          <td>Above 500 </td>
+          <td>4 rs/unit</td>
+         
+        </tr>
+    
+        
+      </table>
+      
+  
+</div>
+
+
+
+</body>
+</html>
